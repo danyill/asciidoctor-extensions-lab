@@ -166,6 +166,9 @@ Converts line comments to visual elements (normally dropped).
 SlimBlock, link:lib/slim-block.rb[]::
 Passes the content in blocks named `slim` to the Slim template engine for processing.
 
+SrcInlineMacro, link:lib/src-inline-macro.rb[]::
+Adds an inline macro for source code to allow use of the highlightjs syntax highlighter. It can be readily adapted for other syntax highlighters.
+
 StepsPostprocessor, link:lib/steps-postprocessor.rb[]::
 Styles an ordered list as a procedure list.
 
