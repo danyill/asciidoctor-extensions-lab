@@ -1,19 +1,11 @@
 = Test file 
-:source-highlighter: pygments
+:source-highlighter: highlightjs
 
 This test file shows how the inline macro for source highlighting works:
 
 Just wanted to say: src:python[print 'Hello world'] how you doing?!
 
-That was highlight because I wrote it like this: `pass:n[src:python[print 'Hello world'\]]`
-
-if src:python[a < b] then "`Hey, that's pretty neat!`"
-
-Then we used this super-sweet thing in Ruby to make this extension src:ruby[Asciidoctor::SyntaxHighlighter::Base.class_eval { }]
-
-Anyway, then what we do is wrap it all up in src:ruby[%(<code#{lang ? %( data-lang="#{lang}" class="#{class_attr_val}") : ''}>#{node.content}</code>)] and by that time we're basically done.
-
-But if in Ruby you do this src:ruby[class SrcInlineMacro < Extensions::InlineMacroProcessor] well then you can have a beautiful macro! The src:html[<code title="language">blah</code>] is set to allow you to see the language by hovering over it via a tooltip.
+That was highlighted because I wrote it like this: `pass:q[src:python[print 'Hello world'\]]`
 
 Normal source macros should still work just fine... BTW if you're wondering how to invoke this, try src:bash[asciidoctor --trace -r ./lib/src-inline-macro.rb ./lib/src-inline-macro/sample.adoc].
 

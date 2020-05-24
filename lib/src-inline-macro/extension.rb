@@ -36,7 +36,7 @@ class SrcInlineMacro < Extensions::InlineMacroProcessor
       new_block = Inline.new(parent, context: :quoted, source: source, subs: :default)
       parent << new_block
       new_block.text()
-      new_block.convert()
+      # new_block.convert()
     end 
   end
 end
@@ -60,14 +60,13 @@ class SrcMacroAssetsDocinfoProcessor < Extensions::DocinfoProcessor
       end
       script_content = %q(
       document.addEventListener('DOMContentLoaded', (event) => {
-        document.querySelectorAll('code').forEach((block) => {
+        document.querySelectorAll('.highlight.inline').forEach((block) => {
           hljs.highlightBlock(block);
         });
       });
       )
       script = ['<script>', script_content.chomp, '</script>'].join("\n")
       return [style, script].join("\n")
-
     end
   end
 
